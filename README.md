@@ -42,3 +42,32 @@ pip install bleak
 ```
 python3 main.py
 ```
+
+
+# Getting printf output to PC
+```
+sudo apt install minicom
+```
+And add to `CMakeLists.txt`
+```
+pico_enable_stdio_usb(server 1) # enable usb output to serial com port
+```
+
+To find the serial port in /dev paste in terminal and reconnect device:
+```
+while true; do
+    a=$(ls /dev)
+    sleep 1
+    b=$(ls /dev/)
+    if [ "$a" != "$b" ]; then
+        diff <(echo "$a") <(echo "$b")
+    fi
+done
+```
+
+Read from serial
+```
+sudo minicom -D /dev/ttyACM0
+```
+
+Exit (CTRL A -> Q -> ENTER)

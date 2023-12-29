@@ -23,5 +23,5 @@ target_include_directories(server PRIVATE
     ${CMAKE_CURRENT_LIST_DIR}/include
     )
 pico_btstack_make_gatt_header(server PRIVATE "${CMAKE_CURRENT_LIST_DIR}/server.gatt")
-
+pico_enable_stdio_usb(server 1) # enable usb output to serial com port
 pico_add_extra_outputs(server)
