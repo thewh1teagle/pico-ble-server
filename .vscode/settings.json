@@ -1,0 +1,15 @@
+{
+    "C_Cpp.default.includePath": [
+        "${workspaceFolder}/.pico/pico-sdk/**",
+        "${workspaceFolder}/.pico/pico-sdk/lib/**",
+        "${workspaceFolder}/include/**",
+        "${workspaceFolder}/build/generated/pico_base"
+    ],
+    "files.associations": {
+        "btstack.h": "c",
+        "adc.h": "c",
+        "temp_sensor.h": "c",
+        "pico.h": "c",
+        "version.h": "c"
+    }
+}
