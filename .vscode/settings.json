@@ -10,6 +10,15 @@
         "adc.h": "c",
         "temp_sensor.h": "c",
         "pico.h": "c",
-        "version.h": "c"
-    }
+        "version.h": "c",
+        "tusb.h": "c",
+        "usb_descriptors.h": "c",
+        "btstack_hid_parser.h": "c",
+        "btstack_hid.h": "c",
+        "hid.h": "c",
+        "btstack_cyw43.h": "c",
+        "local_hid.h": "c",
+        "tusb_common.h": "c"
+    },
+    "C_Cpp.dimInactiveRegions": false
 }
