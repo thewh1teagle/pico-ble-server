@@ -22,12 +22,16 @@ async def main():
     async with BleakClient(device) as client:
         services = client.services
         char = await find_char(services)
-        while True:
-            packet = await client.read_gatt_char(char)
-            temp, = struct.unpack('<H', packet) # uint16_t
-            # Convert the uint16_t to a float
-            temp = temp / 100.0
-            print(f'Temp is {temp}')
+        input('press to continue')
+        for i in range(3):
+            await client.write_gatt_char(char, (str(i) + '\n\r').encode('utf-8'), response=False)
             await asyncio.sleep(1)
-
+        # while True:
+        #     packet = await client.read_gatt_char(char)
+        #     temp, = struct.unpack('<H', packet) # uint16_t
+        #     # Convert the uint16_t to a float
+        #     temp = temp / 100.0
+        #     print(f'Temp is {temp}')
+        #     await asyncio.sleep(1)
+        print("Done")
 asyncio.run(main())

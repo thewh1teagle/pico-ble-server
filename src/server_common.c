@@ -73,6 +73,7 @@ uint16_t att_read_callback(hci_con_handle_t connection_handle, uint16_t att_hand
 }
 
 int att_write_callback(hci_con_handle_t connection_handle, uint16_t att_handle, uint16_t transaction_mode, uint16_t offset, uint8_t *buffer, uint16_t buffer_size) {
+    move_mouse();
     UNUSED(transaction_mode);
     UNUSED(offset);
     UNUSED(buffer_size);

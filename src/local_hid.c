@@ -158,6 +158,13 @@ static void send_hid_report(uint8_t report_id, uint32_t btn)
   }
 }
 
+void move_mouse() {
+  int8_t const delta = 5;
+
+      // no button, right + down, no scroll, no pan
+    tud_hid_mouse_report(REPORT_ID_MOUSE, 0x00, delta, delta, 0, 0);
+}
+
 // Every 10ms, we will sent 1 report for each HID profile (keyboard, mouse etc ..)
 // tud_hid_report_complete_cb() is used to send the next report after previous one is complete
 void hid_task(void)
