@@ -27,11 +27,37 @@
 
 enum
 {
-  REPORT_ID_KEYBOARD = 1,
-  REPORT_ID_MOUSE,
-  REPORT_ID_CONSUMER_CONTROL,
-  REPORT_ID_GAMEPAD,
-  REPORT_ID_COUNT
+  VENDOR_REQUEST_WEBUSB = 1,
+  VENDOR_REQUEST_MICROSOFT = 2
 };
+
+extern uint8_t const desc_ms_os_20[];
+
+enum
+{
+  ITF_NUM_CDC = 0,
+  ITF_NUM_CDC_DATA,
+  ITF_NUM_VENDOR,
+  ITF_NUM_KEYBOARD,
+  ITF_NUM_MOUSE,
+  ITF_NUM_TOTAL
+};
+
+enum
+{
+  HID_INSTANCE_KEYBOARD = 0,
+  HID_INSTANCE_MOUSE,
+};
+
+enum
+{
+  CDC_INSTANCE_1 = 0,
+};
+
+enum
+{
+  VENDOR_INSTANCE_1 = 0,
+};
+
 
 #endif /* USB_DESCRIPTORS_H_ */
