@@ -1,4 +1,4 @@
-# Pico W Bluetooth Stack
+# Pico W BLE server
 
 Basic Pico w BLE server which send temperate of the CPU each second
 and print it also to serial output over USB in the same time!
