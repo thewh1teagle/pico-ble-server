@@ -9,7 +9,8 @@
 #include "hardware/adc.h"
 
 #include "temp_sensor.h"
-#include "server_common.h"
+#include "ble_common.h"
+#include <bluetooth_data_types.h>
 
 #define APP_AD_FLAGS 0x06
 static uint8_t adv_data[] = {

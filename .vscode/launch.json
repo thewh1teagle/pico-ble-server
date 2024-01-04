@@ -1,0 +1,10 @@
+{
+    "configurations": [
+        {
+            "name": "Launch",
+            "preLaunchTask": "build",
+            "console": "integratedTerminal",
+            "args": ["echo", "hi"]
+        }
+    ]
+}

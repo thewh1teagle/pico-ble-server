@@ -11,7 +11,8 @@
 #include "hardware/adc.h"
 #include "pico/stdlib.h"
 
-#include "server_common.h"
+#include "ble_common.h"
+#include <boards/pico_w.h>
 
 #define HEARTBEAT_PERIOD_MS 1000
 
@@ -22,8 +23,8 @@ static void heartbeat_handler(struct btstack_timer_source *ts) {
     static uint32_t counter = 0;
     counter++;
 
-    // Update the temp every 10s
-    if (counter % 10 == 0) {
+    // Update the temp every 1s
+    if (counter % 1 == 0) {
         poll_temp();
         if (le_notification_enabled) {
             att_server_request_can_send_now_event(con_handle);

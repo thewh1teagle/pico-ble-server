@@ -1,15 +1,34 @@
 {
-    "C_Cpp.default.includePath": [
-        "${workspaceFolder}/.pico/pico-sdk/**",
-        "${workspaceFolder}/.pico/pico-sdk/lib/**",
-        "${workspaceFolder}/include/**",
-        "${workspaceFolder}/build/generated/pico_base"
+    "terminal.integrated.env.windows": {
+        "PATH": "${env:PATH}C:\\msys64\\ucrt64\\bin",
+        "PICO_SDK_PATH": "C:\\msys64\\ucrt64\\share\\mingw-w64-ucrt-x86_64-pico-sdk"
+    },
+    "cmake.configureEnvironment": {
+        "PICO_SDK_PATH": "C:\\msys64\\ucrt64\\share\\mingw-w64-ucrt-x86_64-pico-sdk"
+    },
+    "cmake.generator": "MinGW Makefiles",
+    "cmake.additionalCompilerSearchDirs": [
+        "C:/msys64/ucrt64/bin"
     ],
+    "cmake.launchBehavior": "reuseTerminal",
+
+    "terminal.integrated.defaultProfile.windows": "MSYS2 UCRT64",
+    "terminal.integrated.profiles.windows": {
+      "MSYS2 UCRT64": {
+        "path": "C:\\msys64\\msys2_shell.cmd",
+        "args": [
+          "-defterm",
+          "-here",
+          "-no-start",
+          "-use-full-path",
+          "-ucrt64"
+        ],
+      },
+    },
     "files.associations": {
-        "btstack.h": "c",
-        "adc.h": "c",
-        "temp_sensor.h": "c",
-        "pico.h": "c",
-        "version.h": "c"
+      "temp_sensor.h": "c",
+      "stdlib.h": "c"
     }
 }
+
+

@@ -7,10 +7,15 @@ UUID = '0000181a-0000-1000-8000-00805f9b34fb'
 async def find_address():
     devices = await BleakScanner.discover()
     for d in devices:
+        print(d)
+        breakpoint()
         details = d.details
-        if UUID in details['props']['UUIDs']:
-            return d
-
+        print(details)
+        try:
+            if UUID in details['props']['UUIDs']:
+                return d
+        except:
+            pass
 async def find_char(services: BleakGATTServiceCollection):  
     for id, handle in services.characteristics.items():
         desc = handle.description
@@ -19,6 +24,10 @@ async def find_char(services: BleakGATTServiceCollection):
         
 async def main():
     device = await find_address()
+    if not device:
+        print('No device found')
+        return
+    print(f'Found device {device}')
     async with BleakClient(device) as client:
         services = client.services
         char = await find_char(services)
