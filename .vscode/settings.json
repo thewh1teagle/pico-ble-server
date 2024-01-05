@@ -35,7 +35,9 @@
       "atomic": "c",
       "bit": "c",
       "cstdint": "c",
-      "xstring": "c"
+      "xstring": "c",
+      "stdio.h": "c",
+      "bluetooth_server.h": "c"
     },
     "C_Cpp.default.defines": [
         "callt=",

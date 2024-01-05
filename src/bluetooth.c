@@ -1,14 +1,13 @@
 #include "btstack.h"
 
-#include "server_common.h"
 #include <stdio.h>
 #include "pico/cyw43_arch.h"
 #include "pico/btstack_cyw43.h"
 #include "hardware/adc.h"
 #include "pico/stdlib.h"
 
-#include "server.h"
-#include "server_common.h"
+#include "bluetooth_server.h"
+
 
 
 static void heartbeat_handler(struct btstack_timer_source *ts) {

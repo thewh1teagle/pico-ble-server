@@ -1,15 +1,11 @@
-/**
- * Copyright (c) 2023 Raspberry Pi (Trading) Ltd.
- *
- * SPDX-License-Identifier: BSD-3-Clause
- */
-
 #include <stdio.h>
 #include "btstack.h"
+#include "pico/cyw43_arch.h"
+#include "pico/btstack_cyw43.h"
 #include "hardware/adc.h"
-
+#include "pico/stdlib.h"
+#include "bluetooth_server.h"
 #include "temp_sensor.h"
-#include "server_common.h"
 
 #define APP_AD_FLAGS 0x06
 static uint8_t adv_data[] = {

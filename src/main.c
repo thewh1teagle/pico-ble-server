@@ -4,10 +4,8 @@
 #include "pico/btstack_cyw43.h"
 #include "hardware/adc.h"
 #include "pico/stdlib.h"
-
-#include "server.h"
-
 #include "tusb.h"
+#include "bluetooth_server.h"
 
 
 int main() {

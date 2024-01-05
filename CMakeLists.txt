@@ -7,22 +7,26 @@ pico_sdk_init()
 
 add_executable(server
     ${CMAKE_CURRENT_LIST_DIR}
-    src/bluetooth.c src/local_hid.c src/server.c src/server_common.c src/usb_descriptors.c src/main.c
+    src/bluetooth.c 
+    src/hid_device.c 
+    src/bluetooth_server.c 
+    src/usb_descriptors.c 
+    src/main.c
 )
 
 # In addition to pico_stdlib required for common PicoSDK functionality, add dependency on tinyusb_device
 # for TinyUSB device support and tinyusb_board for the additional board support library used by the example
 target_link_libraries(server PUBLIC 
-    pico_btstack_ble pico_btstack_cyw43 pico_cyw43_arch_none hardware_adc
-    pico_stdlib pico_unique_id tinyusb_device tinyusb_board 
+    pico_btstack_ble 
+    pico_btstack_cyw43 
+    pico_cyw43_arch_none 
+    hardware_adc
+    pico_stdlib 
+    pico_unique_id 
+    tinyusb_device 
+    tinyusb_board 
 )
 
-
-# target_sources(server PUBLIC
-#         ${CMAKE_CURRENT_LIST_DIR}/src/main.c
-#         ${CMAKE_CURRENT_LIST_DIR}/src/usb_descriptors.c
-#         ${CMAKE_CURRENT_LIST_DIR}/src/hid.c
-#         )
 
 # Make sure TinyUSB can find tusb_config.h
 target_include_directories(server PUBLIC
