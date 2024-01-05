@@ -1,16 +1,15 @@
 {
     "configurations": [
         {
-            "name": "Linux",
+            "name": "Win32",
             "includePath": [
                 "${default}",
-                "${workspaceFolder}/.pico/pico-sdk/lib/btstack/src"
             ],
-            "defines": [],
-            "compilerPath": "/usr/bin/gcc",
+            "windowsSdkVersion": "10.0.22000.0",
+            "compilerPath": "cl.exe",
             "cStandard": "c17",
-            "cppStandard": "gnu++17",
-            "intelliSenseMode": "linux-gcc-x64"
+            "cppStandard": "c++17",
+            "intelliSenseMode": "windows-msvc-x64"
         }
     ],
     "version": 4

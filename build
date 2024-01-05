@@ -1,0 +1,18 @@
+#!/bin/bash
+cmake -B .build -G "Ninja" -DPICO_BOARD=pico_w -DPICO_PLATFORM=rp2040
+if ! cmake --build .build -- -j16; then
+    exit 1;
+fi
+
+# reboot pico to bootloader
+if ! picotool info > /dev/null; then
+    echo "Device in application mode"
+    echo "Reboot..."
+    serust --product-id 000a -b 1200 # reset
+    # picotool reboot -u -f
+    sleep 2
+fi
+picotool load -x .build/server.uf2
+sleep 2 # wait for load
+# open serial if serust command available
+command -v serust &> /dev/null && serust --product-id 000a -b 115200 # 00a is default pico USB PID

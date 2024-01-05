@@ -1,24 +1,48 @@
 {
-    "C_Cpp.default.includePath": [
-        "${workspaceFolder}/.pico/pico-sdk/**",
-        "${workspaceFolder}/.pico/pico-sdk/lib/**",
-        "${workspaceFolder}/include/**",
-        "${workspaceFolder}/build/generated/pico_base"
-    ],
-    "files.associations": {
-        "btstack.h": "c",
-        "adc.h": "c",
-        "temp_sensor.h": "c",
-        "pico.h": "c",
-        "version.h": "c",
-        "tusb.h": "c",
-        "usb_descriptors.h": "c",
-        "btstack_hid_parser.h": "c",
-        "btstack_hid.h": "c",
-        "hid.h": "c",
-        "btstack_cyw43.h": "c",
-        "local_hid.h": "c",
-        "tusb_common.h": "c"
+    "terminal.integrated.env.windows": {
+        "PATH": "${env:PATH}C:\\msys64\\ucrt64\\bin",
+        "PICO_SDK_PATH": "C:\\msys64\\ucrt64\\share\\pico-sdk"
     },
-    "C_Cpp.dimInactiveRegions": false
+    "C_Cpp.default.includePath": [
+      "C:\\msys64\\ucrt64\\share\\pico-sdk\\",
+      "C:\\msys64\\ucrt64\\include\\**",
+      "${workspaceFolder}/include/*",
+      "C:\\msys64\\ucrt64\\lib\\gcc\\arm-none-eabi\\12.2.0\\include",
+      "${workspaceFolder}"
+    ],
+    "terminal.integrated.defaultProfile.windows": "MSYS2 UCRT64",
+    "terminal.integrated.profiles.windows": {
+      "MSYS2 UCRT64": {
+        "path": "C:\\msys64\\msys2_shell.cmd",
+        "args": [
+          "-defterm",
+          "-here",
+          "-no-start",
+          "-use-full-path",
+          "-ucrt64"
+        ],
+      },
+    },
+    "files.associations": {
+      "usb_descriptors.h": "c",
+      "tusb_config.h": "c",
+      "hid.h": "c",
+      "tusb.h": "c",
+      "stdint.h": "c",
+      "board.h": "c",
+      "xutility": "c",
+      "*.inc": "c",
+      "atomic": "c",
+      "bit": "c",
+      "cstdint": "c",
+      "xstring": "c"
+    },
+    "C_Cpp.default.defines": [
+        "callt=",
+        "near_func=",
+        "far=",
+        "huge="
+    ],
 }
+
+
